@@ -1,3 +1,96 @@
+# RUN BOOK
+## Project: DB to LDAP Sync & Search System
+
+---
+
+## 1. Purpose
+This runbook explains how to run and operate the DB–LDAP Sync project in a local environment.
+
+It helps any developer/admin to:
+- Start the system
+- Perform sync operations
+- Perform search operations
+- Troubleshoot common issues
+
+---
+
+## 2. Prerequisites
+
+Make sure the following are installed:
+
+- Java (JDK 8 or above)
+- MySQL Server running
+- LDAP Server running (ApacheDS)
+- MySQL Connector JAR present in lib folder
+- VS Code / Terminal access
+
+
+
+
+## 4. Steps to Run the Application
+
+Open terminal and run:
+
+Step 1:
+cd .\src\
+
+Step 2:
+javac -cp ".;..\lib\mysql-connector-j-9.6.0.jar" LDAPFunctionTest.java
+
+Step 3:
+java -cp ".;..\lib\mysql-connector-j-9.6.0.jar" LDAPFunctionTest
+
+---
+
+## 5. Application Flow
+
+1. System asks for password
+2. After authentication, user gets 2 options:
+
+   1) DB to LDAP Operations
+   2) Search Operations
+
+---
+
+## 6. DB → LDAP Operations
+
+Options available:
+
+1. Fetch Employees from DB → Add to LDAP
+2. Fetch Contractors from DB → Add to LDAP
+3. Sync Deleted Users
+4. Sync Updated Users
+5. Exit
+
+---
+
+## 7. Search Operations
+
+Options available:
+
+1. Search by User
+2. Search by Employee
+3. Search by Contractor
+4. Group Search
+5. Advanced Search
+6. Exit
+
+Search menu runs in loop until exit.
+
+---
+
+
+## 9. Notes
+
+- UID is used as unique identifier for sync
+- System avoids duplicate LDAP entries
+- Deleted users are also removed from groups
+
+
+
+
+
+
 # Search in Directories & DB Sync Project
 
 ## Project Overview
